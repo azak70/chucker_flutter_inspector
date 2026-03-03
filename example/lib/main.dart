@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 void main() {
   runApp(const ExampleApp());
@@ -23,7 +23,8 @@ class ExampleApp extends StatelessWidget {
               child: FloatingActionButton.small(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const NetworkInspectorPage()),
+                    MaterialPageRoute(
+                        builder: (_) => const NetworkInspectorPage()),
                   );
                 },
                 child: const Icon(Icons.http),
@@ -66,7 +67,9 @@ class HomePage extends StatelessWidget {
       body: body,
     );
     // Simulate a response
-    final payload = {'data': {'hello': 'world'}};
+    final payload = {
+      'data': {'hello': 'world'}
+    };
     NetworkInspector.instance.finishRequest(
       id: id,
       statusCode: 200,

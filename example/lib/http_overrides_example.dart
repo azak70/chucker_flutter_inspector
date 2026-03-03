@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 class CapturingHttpOverrides extends HttpOverrides {
   @override

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 Future<void> runDioExample() async {
   final dio = Dio();
@@ -10,7 +10,8 @@ Future<void> runDioExample() async {
       final id = NetworkInspector.instance.startRequest(
         method: options.method,
         uri: options.uri,
-        headers: options.headers.map((k, v) => MapEntry(k, v?.toString() ?? '')),
+        headers:
+            options.headers.map((k, v) => MapEntry(k, v?.toString() ?? '')),
         body: options.data,
       );
       options.extra['inspector_id'] = id;
@@ -35,7 +36,8 @@ Future<void> runDioExample() async {
       NetworkInspector.instance.finishRequest(
         id: id,
         statusCode: e.response?.statusCode ?? 500,
-        headers: e.response?.headers.map.map((k, v) => MapEntry(k, v.join(','))),
+        headers:
+            e.response?.headers.map.map((k, v) => MapEntry(k, v.join(','))),
         bodyBytes: Uint8List.fromList(utf8.encode(jsonEncode(payload))),
       );
       handler.next(e);

@@ -1,6 +1,6 @@
-# network_inspector
+# chucker_flutter_inspector
 
-[![Pub](https://img.shields.io/pub/v/network_inspector.svg)](https://pub.dev/packages/network_inspector)
+[![Pub](https://img.shields.io/pub/v/chucker_flutter_inspector.svg)](https://pub.dev/packages/chucker_flutter_inspector)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -19,14 +19,14 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  network_inspector: ^0.1.0
+  chucker_flutter_inspector: ^0.1.0
 ```
 
 Or use a local path during development:
 
 ```yaml
 dependencies:
-  network_inspector:
+  chucker_flutter_inspector:
     path: packages/network_inspector
 ```
 
@@ -36,7 +36,7 @@ Render a floating button and open the inspector page:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -73,7 +73,7 @@ Wrap your client calls with `startRequest` and `finishRequest`:
 
 ```dart
 import 'package:http/http.dart' as http;
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 Future<void> fetchProducts() async {
   final uri = Uri.parse('https://example.com/api/products');
@@ -100,7 +100,7 @@ Instrument your `GraphQLClient` calls similarly:
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:network_inspector/network_inspector.dart';
+import 'package:azak_network_inspector/network_inspector.dart';
 
 Future<QueryResult> runQuery(GraphQLClient client, String query, Map<String, dynamic> variables) async {
   final id = NetworkInspector.instance.startRequest(
@@ -129,7 +129,7 @@ You can instrument Dio by intercepting requests and responses:
 import 'dart:typed_data';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:network_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/network_inspector.dart';
 
 final dio = Dio();
 
@@ -271,6 +271,8 @@ See `example/` for a minimal Flutter app showing integration.
   - Ensure analyzer passes and README includes code samples
   - Confirm example app builds: `flutter run` from `example/`
 
+## Branding
+- Add your logo at `docs/logo.png` and include it in the README header if desired.
 
 ## Support & Contact
 - GitHub: https://github.com/azak70/network_inspector

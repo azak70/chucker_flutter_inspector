@@ -1,4 +1,4 @@
-name: network_inspector
+name: chucker_flutter_inspector
 description: In-app HTTP and GraphQL inspector for Flutter apps.
 version: 0.1.0
 homepage: https://github.com/azak70/network_inspector
