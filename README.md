@@ -36,7 +36,7 @@ Render a floating button and open the inspector page:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -73,7 +73,7 @@ Wrap your client calls with `startRequest` and `finishRequest`:
 
 ```dart
 import 'package:http/http.dart' as http;
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 Future<void> fetchProducts() async {
   final uri = Uri.parse('https://example.com/api/products');
@@ -100,7 +100,7 @@ Instrument your `GraphQLClient` calls similarly:
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 Future<QueryResult> runQuery(GraphQLClient client, String query, Map<String, dynamic> variables) async {
   final id = NetworkInspector.instance.startRequest(
@@ -129,7 +129,7 @@ You can instrument Dio by intercepting requests and responses:
 import 'dart:typed_data';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 final dio = Dio();
 
@@ -179,7 +179,7 @@ To capture low-level `dart:io` HttpClient traffic globally:
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:convert';
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 class CapturingHttpOverrides extends HttpOverrides {
   @override

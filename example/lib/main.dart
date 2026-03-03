@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 void main() {
   runApp(const ExampleApp());

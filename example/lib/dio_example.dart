@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
-import 'package:chucker_flutter_inspector/network_inspector.dart';
+import 'package:chucker_flutter_inspector/chucker_flutter_inspector.dart';
 
 Future<void> runDioExample() async {
   final dio = Dio();
